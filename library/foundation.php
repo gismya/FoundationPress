@@ -2,13 +2,13 @@
 /**
  * Foundation PHP template
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package RenameMe
+ * @since RenameMe 1.0.0
  */
 
 // Pagination.
-if ( ! function_exists( 'foundationpress_pagination' ) ) :
-	function foundationpress_pagination() {
+if ( ! function_exists( 'renameme_pagination' ) ) :
+	function renameme_pagination() {
 		global $wp_query;
 
 		$big = 999999999; // This needs to be an unlikely integer
@@ -22,8 +22,8 @@ if ( ! function_exists( 'foundationpress_pagination' ) ) :
 				'total'     => $wp_query->max_num_pages,
 				'mid_size'  => 5,
 				'prev_next' => true,
-				'prev_text' => __( '&laquo;', 'foundationpress' ),
-				'next_text' => __( '&raquo;', 'foundationpress' ),
+				'prev_text' => __( '&laquo;', 'renameme' ),
+				'next_text' => __( '&raquo;', 'renameme' ),
 				'type'      => 'list',
 			)
 		);
@@ -46,20 +46,20 @@ endif;
  * A fallback when no navigation is selected by default.
  */
 
-if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
-	function foundationpress_menu_fallback() {
+if ( ! function_exists( 'renameme_menu_fallback' ) ) :
+	function renameme_menu_fallback() {
 		echo '<div class="alert-box secondary">';
 		/* translators: %1$s: link to menus, %2$s: link to customize. */
 		printf(
-			__( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'foundationpress' ),
+			__( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'renameme' ),
 			/* translators: %s: menu url */
 			sprintf(
-				__( '<a href="%s">Menus</a>', 'foundationpress' ),
+				__( '<a href="%s">Menus</a>', 'renameme' ),
 				get_admin_url( get_current_blog_id(), 'nav-menus.php' )
 			),
 			/* translators: %s: customize url */
 			sprintf(
-				__( '<a href="%s">Customize</a>', 'foundationpress' ),
+				__( '<a href="%s">Customize</a>', 'renameme' ),
 				get_admin_url( get_current_blog_id(), 'customize.php' )
 			)
 		);
@@ -68,22 +68,22 @@ if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
 endif;
 
 // Add Foundation 'is-active' class for the current menu item.
-if ( ! function_exists( 'foundationpress_active_nav_class' ) ) :
-	function foundationpress_active_nav_class( $classes, $item ) {
+if ( ! function_exists( 'renameme_active_nav_class' ) ) :
+	function renameme_active_nav_class( $classes, $item ) {
 		if ( $item->current == 1 || $item->current_item_ancestor == true ) {
 			$classes[] = 'is-active';
 		}
 		return $classes;
 	}
-	add_filter( 'nav_menu_css_class', 'foundationpress_active_nav_class', 10, 2 );
+	add_filter( 'nav_menu_css_class', 'renameme_active_nav_class', 10, 2 );
 endif;
 
 /**
  * Use the is-active class of ZURB Foundation on wp_list_pages output.
  * From required+ Foundation http://themes.required.ch.
  */
-if ( ! function_exists( 'foundationpress_active_list_pages_class' ) ) :
-	function foundationpress_active_list_pages_class( $input ) {
+if ( ! function_exists( 'renameme_active_list_pages_class' ) ) :
+	function renameme_active_list_pages_class( $input ) {
 
 		$pattern = '/current_page_item/';
 		$replace = 'current_page_item is-active';
@@ -92,15 +92,15 @@ if ( ! function_exists( 'foundationpress_active_list_pages_class' ) ) :
 
 		return $output;
 	}
-	add_filter( 'wp_list_pages', 'foundationpress_active_list_pages_class', 10, 2 );
+	add_filter( 'wp_list_pages', 'renameme_active_list_pages_class', 10, 2 );
 endif;
 
 /**
  * Enable Foundation responsive embeds for WP video embeds
  */
 
-if ( ! function_exists( 'foundationpress_responsive_video_oembed_html' ) ) :
-	function foundationpress_responsive_video_oembed_html( $html, $url, $attr, $post_id ) {
+if ( ! function_exists( 'renameme_responsive_video_oembed_html' ) ) :
+	function renameme_responsive_video_oembed_html( $html, $url, $attr, $post_id ) {
 
 		// Whitelist of oEmbed compatible sites that **ONLY** support video.
 		// Cannot determine if embed is a video or not from sites that
@@ -158,15 +158,15 @@ if ( ! function_exists( 'foundationpress_responsive_video_oembed_html' ) ) :
 		}
 
 	}
-	add_filter( 'embed_oembed_html', 'foundationpress_responsive_video_oembed_html', 10, 4 );
+	add_filter( 'embed_oembed_html', 'renameme_responsive_video_oembed_html', 10, 4 );
 endif;
 
 /**
  * Get mobile menu ID
  */
 
-if ( ! function_exists( 'foundationpress_mobile_menu_id' ) ) :
-	function foundationpress_mobile_menu_id() {
+if ( ! function_exists( 'renameme_mobile_menu_id' ) ) :
+	function renameme_mobile_menu_id() {
 		if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) {
 			echo 'off-canvas-menu';
 		} else {
@@ -179,8 +179,8 @@ endif;
  * Get title bar responsive toggle attribute
  */
 
-if ( ! function_exists( 'foundationpress_title_bar_responsive_toggle' ) ) :
-	function foundationpress_title_bar_responsive_toggle() {
+if ( ! function_exists( 'renameme_title_bar_responsive_toggle' ) ) :
+	function renameme_title_bar_responsive_toggle() {
 		if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) {
 			echo 'data-responsive-toggle="mobile-menu"';
 		}

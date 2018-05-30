@@ -2,17 +2,17 @@
 /**
  * Register widget areas
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package RenameMe
+ * @since RenameMe 1.0.0
  */
 
-if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
-	function foundationpress_sidebar_widgets() {
+if ( ! function_exists( 'renameme_sidebar_widgets' ) ) :
+	function renameme_sidebar_widgets() {
 		register_sidebar(
 			array(
 				'id'            => 'sidebar-widgets',
-				'name'          => __( 'Sidebar widgets', 'foundationpress' ),
-				'description'   => __( 'Drag widgets to this sidebar container.', 'foundationpress' ),
+				'name'          => __( 'Sidebar widgets', 'renameme' ),
+				'description'   => __( 'Drag widgets to this sidebar container.', 'renameme' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h6>',
@@ -23,8 +23,8 @@ if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
 		register_sidebar(
 			array(
 				'id'            => 'footer-widgets',
-				'name'          => __( 'Footer widgets', 'foundationpress' ),
-				'description'   => __( 'Drag widgets to this footer container', 'foundationpress' ),
+				'name'          => __( 'Footer widgets', 'renameme' ),
+				'description'   => __( 'Drag widgets to this footer container', 'renameme' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
 				'before_title'  => '<h6>',
@@ -33,5 +33,5 @@ if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
 		);
 	}
 
-	add_action( 'widgets_init', 'foundationpress_sidebar_widgets' );
+	add_action( 'widgets_init', 'renameme_sidebar_widgets' );
 endif;

@@ -5,8 +5,8 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package RenameMe
+ * @since RenameMe 1.0.0
  */
 
 if ( have_comments() ) :
@@ -17,13 +17,13 @@ if ( have_comments() ) :
 
 		wp_list_comments(
 			array(
-				'walker'            => new Foundationpress_Comments(),
+				'walker'            => new Renameme_Comments(),
 				'max_depth'         => '',
 				'style'             => 'ol',
 				'callback'          => null,
 				'end-callback'      => null,
 				'type'              => 'all',
-				'reply_text'        => __( 'Reply', 'foundationpress' ),
+				'reply_text'        => __( 'Reply', 'renameme' ),
 				'page'              => '',
 				'per_page'          => '',
 				'avatar_size'       => 48,
@@ -32,7 +32,7 @@ if ( have_comments() ) :
 				'format'            => 'html5',
 				'short_ping'        => false,
 				'echo'              => true,
-				'moderation'        => __( 'Your comment is awaiting moderation.', 'foundationpress' ),
+				'moderation'        => __( 'Your comment is awaiting moderation.', 'renameme' ),
 			)
 		);
 
@@ -50,12 +50,12 @@ endif;
 	Prevent access to this file directly
 	*/
 
-	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'foundationpress' ) );
+	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'renameme' ) );
 
 	if ( post_password_required() ) { ?>
 	<section id="comments">
 		<div class="notice">
-			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'foundationpress' ); ?></p>
+			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'renameme' ); ?></p>
 		</div>
 	</section>
 	<?php
@@ -71,9 +71,9 @@ if ( comments_open() ) :
 	<h3>
 		<?php
 			comment_form_title(
-				__( 'Leave a Reply', 'foundationpress' ),
+				__( 'Leave a Reply', 'renameme' ),
 				/* translators: %s: author of comment being replied to */
-				__( 'Leave a Reply to %s', 'foundationpress' )
+				__( 'Leave a Reply to %s', 'renameme' )
 			);
 		?>
 	</h3>
@@ -83,7 +83,7 @@ if ( comments_open() ) :
 		<?php
 			/* translators: %s: login url */
 			printf(
-				__( 'You must be <a href="%s">logged in</a> to post a comment.', 'foundationpress' ),
+				__( 'You must be <a href="%s">logged in</a> to post a comment.', 'renameme' ),
 				wp_login_url( get_permalink() )
 			);
 		?>
@@ -95,19 +95,19 @@ if ( comments_open() ) :
 			<?php
 				/* translators: %1$s: site url, %2$s: user identity  */
 				printf(
-					__( 'Logged in as <a href="%1$s/wp-admin/profile.php">%2$s</a>.', 'foundationpress' ),
+					__( 'Logged in as <a href="%1$s/wp-admin/profile.php">%2$s</a>.', 'renameme' ),
 					get_option( 'siteurl' ),
 					$user_identity
 				);
-			?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'foundationpress' ); ?>"><?php _e( 'Log out &raquo;', 'foundationpress' ); ?></a>
+			?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'renameme' ); ?>"><?php _e( 'Log out &raquo;', 'renameme' ); ?></a>
 		</p>
 		<?php else : ?>
 		<p>
 			<label for="author">
 				<?php
-					_e( 'Name', 'foundationpress' );
+					_e( 'Name', 'renameme' );
 					if ( $req ) {
-						_e( ' (required)', 'foundationpress' );
+						_e( ' (required)', 'renameme' );
 					}
 				?>
 			</label>
@@ -116,9 +116,9 @@ if ( comments_open() ) :
 		<p>
 			<label for="email">
 				<?php
-					_e( 'Email (will not be published)', 'foundationpress' );
+					_e( 'Email (will not be published)', 'renameme' );
 					if ( $req ) {
-						_e( ' (required)', 'foundationpress' );
+						_e( ' (required)', 'renameme' );
 					}
 				?>
 			</label>
@@ -127,7 +127,7 @@ if ( comments_open() ) :
 		<p>
 			<label for="url">
 				<?php
-					_e( 'Website', 'foundationpress' );
+					_e( 'Website', 'renameme' );
 				?>
 			</label>
 			<input type="text" class="five" name="url" id="url" value="<?php echo esc_attr( $comment_author_url ); ?>" size="22" tabindex="3">
@@ -136,20 +136,20 @@ if ( comments_open() ) :
 		<p>
 			<label for="comment">
 					<?php
-						_e( 'Comment', 'foundationpress' );
+						_e( 'Comment', 'renameme' );
 					?>
 			</label>
 			<textarea name="comment" id="comment" tabindex="4"></textarea>
 		</p>
 		<p id="allowed_tags" class="small"><strong>XHTML:</strong>
 			<?php
-				_e( 'You can use these tags:', 'foundationpress' );
+				_e( 'You can use these tags:', 'renameme' );
 			?>
 			<code>
 				<?php echo allowed_tags(); ?>
 			</code>
 		</p>
-		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', 'foundationpress' ); ?>"></p>
+		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', 'renameme' ); ?>"></p>
 		<?php comment_id_fields(); ?>
 		<?php do_action( 'comment_form', $post->ID ); ?>
 	</form>

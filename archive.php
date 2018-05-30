@@ -11,8 +11,8 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package RenameMe
+ * @since RenameMe 1.0.0
  */
 
 get_header(); ?>
@@ -34,13 +34,13 @@ get_header(); ?>
 
 			<?php /* Display navigation to next/previous pages when applicable */ ?>
 			<?php
-			if ( function_exists( 'foundationpress_pagination' ) ) :
-				foundationpress_pagination();
+			if ( function_exists( 'renameme_pagination' ) ) :
+				renameme_pagination();
 			elseif ( is_paged() ) :
 			?>
 				<nav id="post-nav">
-					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'renameme' ) ); ?></div>
+					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'renameme' ) ); ?></div>
 				</nav>
 			<?php endif; ?>
 

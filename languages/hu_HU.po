@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: foundationpress-libsass-template 5.4.0\n"
+"Project-Id-Version: renameme-libsass-template 5.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-09-13 17:56+0200\n"
 "PO-Revision-Date: 2018-01-03 16:55+0100\n"
@@ -172,8 +172,8 @@ msgstr "Úgy tűnik, nem találtuk meg amit kerestünk. :) Talán, egy újabb ke
 
 #. /archive/search.
 #. *
-#. * @subpackage FoundationPress
-#. * @since FoundationPress 1.0.0
+#. * @subpackage RenameMe
+#. * @since RenameMe 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."

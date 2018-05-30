@@ -2,14 +2,14 @@
 /**
  * Register theme support for languages, menus, post-thumbnails, post-formats etc.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package RenameMe
+ * @since RenameMe 1.0.0
  */
 
-if ( ! function_exists( 'foundationpress_theme_support' ) ) :
-	function foundationpress_theme_support() {
+if ( ! function_exists( 'renameme_theme_support' ) ) :
+	function renameme_theme_support() {
 		// Add language support
-		load_theme_textdomain( 'foundationpress', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'renameme', get_template_directory() . '/languages' );
 
 		// Switch default core markup for search form, comment form, and comments to output valid HTML5
 		add_theme_support(
@@ -43,8 +43,8 @@ if ( ! function_exists( 'foundationpress_theme_support' ) ) :
 		add_theme_support( 'wc-product-gallery-slider' );
 
 		// Add foundation.css as editor style https://codex.wordpress.org/Editor_Style
-		add_editor_style( 'dist/assets/css/' . foundationpress_asset_path( 'app.css' ) );
+		add_editor_style( 'dist/assets/css/' . renameme_asset_path( 'app.css' ) );
 	}
 
-	add_action( 'after_setup_theme', 'foundationpress_theme_support' );
+	add_action( 'after_setup_theme', 'renameme_theme_support' );
 endif;
